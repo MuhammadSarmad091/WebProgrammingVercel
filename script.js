@@ -45,7 +45,7 @@ function setCookie(cname, cvalue, exmin) {
 if (window.location.pathname.includes("gallery.html")) {
     checkSession2();
 }
-else if (window.location.pathname.includes("index.html")) 
+else
 {
     checkSession();
     document.getElementById("loginForm").onsubmit = function(event) {
