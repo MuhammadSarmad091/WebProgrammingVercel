@@ -24,6 +24,7 @@ function setCookie(cname, cvalue, exmin) {
   function checkSession() {
     let sessionId = getCookie("session-id");
     if (sessionId != "") {
+        document.getElementById("galleryLink").href = "gallery.html";
         window.location.href = "gallery.html";
     } else {
         document.getElementById("galleryLink").href = "#";
@@ -31,6 +32,7 @@ function setCookie(cname, cvalue, exmin) {
 }
 
   function checkSession2() {
+    console.log("Here")
     let session = getCookie("session-id");
 
     if (session == "") {
@@ -38,25 +40,27 @@ function setCookie(cname, cvalue, exmin) {
     }
 }
   
-  document.getElementById("loginForm").onsubmit = function(event) {
-    event.preventDefault();
-  
-    const username = document.getElementById("username").value;
-    const password = document.getElementById("password").value;
-  
-    if (username === "Sarmad" && password === "1234") {
-      setCookie("session-id", "userSession", 1); // Cookie expires in 1 minute
-      alert("Login successful. You will be redirected to the gallery.");
-      window.location.href = "gallery.html";
-    } else {
-      alert("Wrong username or password.");
-    }
-  }
 
-  if (window.location.pathname.includes("gallery.html")) {
+
+if (window.location.pathname.includes("gallery.html")) {
     checkSession2();
 }
-if (window.location.pathname.includes("login.html")) {
+else if (window.location.pathname.includes("login.html")) 
+{
     checkSession();
-  };
+    document.getElementById("loginForm").onsubmit = function(event) {
+        event.preventDefault();
+      
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+      
+        if (username === "Sarmad" && password === "1234") {
+          setCookie("session-id", "userSession", 1); // Cookie expires in 1 minute
+          alert("Login successful. You will be redirected to the gallery.");
+          window.location.href = "gallery.html";
+        } else {
+          alert("Wrong username or password.");
+        }
+      }
+};
   
