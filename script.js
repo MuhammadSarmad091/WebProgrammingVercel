@@ -57,6 +57,7 @@ else if (window.location.pathname.includes("index.html"))
         if (username === "Sarmad" && password === "1234") {
           setCookie("session-id", "userSession", 1); // Cookie expires in 1 minute
           alert("Login successful. You will be redirected to the gallery.");
+          document.getElementById("galleryLink").href = "gallery.html";
           window.location.href = "gallery.html";
         } else {
           alert("Wrong username or password.");
