@@ -36,7 +36,7 @@ function setCookie(cname, cvalue, exmin) {
     let session = getCookie("session-id");
 
     if (session == "") {
-        window.location.href = "login.html";
+        window.location.href = "index.html";
     }
 }
   
@@ -45,7 +45,7 @@ function setCookie(cname, cvalue, exmin) {
 if (window.location.pathname.includes("gallery.html")) {
     checkSession2();
 }
-else if (window.location.pathname.includes("login.html")) 
+else if (window.location.pathname.includes("index.html")) 
 {
     checkSession();
     document.getElementById("loginForm").onsubmit = function(event) {
