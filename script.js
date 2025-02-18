@@ -24,11 +24,19 @@ function setCookie(cname, cvalue, exmin) {
   function checkSession() {
     let sessionId = getCookie("session-id");
     if (sessionId != "") {
-      document.getElementById("galleryLink").href = "gallery.html";
+        window.location.href = "gallery.html";
     } else {
-      document.getElementById("galleryLink").href = "#";
+        document.getElementById("galleryLink").href = "#";
     }
-  }
+}
+
+  function checkSession2() {
+    let session = getCookie("session-id");
+
+    if (session == "") {
+        window.location.href = "login.html";
+    }
+}
   
   document.getElementById("loginForm").onsubmit = function(event) {
     event.preventDefault();
@@ -44,8 +52,11 @@ function setCookie(cname, cvalue, exmin) {
       alert("Wrong username or password.");
     }
   }
-  
-  window.onload = function() {
+
+  if (window.location.pathname.includes("gallery.html")) {
+    checkSession2();
+}
+if (window.location.pathname.includes("login.html")) {
     checkSession();
   };
   
