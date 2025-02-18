@@ -1,0 +1,243 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: white;
+    text-align: center;
+}
+
+#NavBar {
+    background-color: #222;
+    position: fixed;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+#NavBar li {
+    list-style: none;
+    margin: 0 20px;
+}
+
+.nav-item {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.nav-item:hover {
+    color: #ffcc00;
+}
+
+.landing {
+    position: relative;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: url('https://art.rtistiq.com/en-us/_next/image?url=https%3A%2F%2Fd28jbe41jq1wak.cloudfront.net%2FBlogsImages%2Fabstract_art_Compressed_638250928944386407.jpg&w=1920&q=75') no-repeat center center/cover;
+    color: white;
+    padding-top: 60px;
+}
+
+.landing::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.landing h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    z-index: 2;
+}
+
+.landing p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    z-index: 2;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background: #ff6347;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    z-index: 2;
+}
+
+.btn:hover {
+    background: #e5533d;
+}
+
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 10px auto;
+
+}
+
+.card {
+    position: relative;
+    background: #949494;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.card:hover .overlay {
+    opacity: 1;
+}
+
+.overlay h3 {
+    color: #ffcc00;
+    font-size: 1.5rem;
+}
+
+.gallery-header {
+    color: white;
+    padding: 50px 0;
+    margin: 0;
+    text-align: center;
+}
+
+.gallery-header h2 {
+    font-size: 2.5rem;
+    margin: 0;
+    font-weight: bold;
+}
+
+.footer {
+    background-color: white;
+    color: #333;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* For removing horizontal scroll bar*/
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.footer p {
+    margin: 5px 0;
+    font-size: 1rem;
+}
+
+@media (max-width: 992px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .gallery {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+.login-container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: auto;
+    margin-top: 100px;
+    
+}
+
+#login-span
+{
+    width: 70vw;
+    height: 75vh;
+    border: 2px solid #ff8c00;
+    border-width: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+input
+{
+    display: block;
+    margin: 20px;
+    height: 25px;
+    width: 200px;
+}
+#loginHeader
+{
+    margin-top: -20px;
+    margin-bottom: 40px;
+    background-color:#ff8c00;
+    padding: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+a
+{
+    color:#ffcc00
+}
+#submitBtn
+{
+    width: 60px;
+    height: 30px;
+}
